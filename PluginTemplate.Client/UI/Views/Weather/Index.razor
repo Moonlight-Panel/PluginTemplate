@@ -1,0 +1,20 @@
+@page "/weather"
+
+@using PluginTemplate.Client.UI.Components
+@using PluginTemplate.Shared.Http.Responses
+
+@inject HttpApiClient HttpApiClient
+
+<LazyLoader Load="Load">
+    <WeatherCard DegreeC="@Response.DegreeC" Location="@Response.Location" Description="@Response.Description" />
+</LazyLoader>
+
+@code
+{
+    private WeatherResponse Response;
+    
+    private async Task Load(LazyLoader _)
+    {
+        Response = await HttpApiClient.GetJson<WeatherResponse>("weather/location?name=Roding");
+    }
+}

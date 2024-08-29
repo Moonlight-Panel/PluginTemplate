@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "MasuOwO",
+  "classifications": [
+    "Blazor",
+    "Web"
+  ],
+  "identity": "Moonlight_v2_PluginTemplate",
+  "name": "Moonlight Plugin Template",
+  "shortName": "moonlight.v2.plugintemplate",
+  "sourceName": "PluginTemplate",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "exclude": [
+        ".template.config/**",
+        "storage/**",
+        "bin/**",
+        "obj/**"
+      ]
+    }
+  ]
+}

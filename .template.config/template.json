@@ -21,7 +21,11 @@
         ".template.config/**",
         "storage/**",
         "bin/**",
-        "obj/**"
+        "obj/**",
+        ".idea/**",
+        ".git/**",
+        "LICENSE",
+        "README.md"
       ]
     }
   ]

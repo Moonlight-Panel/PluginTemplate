@@ -8,7 +8,7 @@
     "Moonlight"
   ],
   "identity": "Moonlight.PluginTemplate.MoonlightPluginTemplate",
-  "name": "Moolight: Plugin",
+  "name": "Moonlight: Plugin",
   "shortName": "mlplugin",
   "sourceName": "MoonlightPluginTemplate",
   "tags": {

@@ -1,0 +1,1 @@
+Moonlight Plugin Template

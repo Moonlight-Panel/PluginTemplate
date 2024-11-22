@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Moonlight.ApiServer" Version="2.1.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.11" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MoonlightPluginTemplate.Frontend\MoonlightPluginTemplate.Frontend.csproj" />
+      <ProjectReference Include="..\MoonlightPluginTemplate.Shared\MoonlightPluginTemplate.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Database\Entities\" />
+      <Folder Include="Database\Migrations\" />
+      <Folder Include="Helpers\" />
+      <Folder Include="Http\Middleware\" />
+      <Folder Include="Implementations\" />
+      <Folder Include="Interfaces\" />
+      <Folder Include="Models\" />
+    </ItemGroup>
+
+</Project>

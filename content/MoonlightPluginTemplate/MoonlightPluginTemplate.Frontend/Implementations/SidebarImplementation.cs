@@ -13,7 +13,7 @@ public class SidebarImplementation : ISidebarItemProvider
             {
                 Name = "Example",
                 Path = "/example",
-                Icon = "bi bi-archive-fill",
+                Icon = "icon-moon",
                 Group = "MoonlightPluginTemplate",
                 Priority = 1
             }

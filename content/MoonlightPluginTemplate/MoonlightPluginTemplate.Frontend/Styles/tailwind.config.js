@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    corePlugins: {
+        preflight: false,
+    },
     content: [
         '../**/*.razor',
         'mappings/*.map'
@@ -120,9 +123,6 @@ module.exports = {
                 'shimmer': 'shimmer 2s linear infinite',
             }
         },
-    },
-    plugins: [
-        require('@tailwindcss/forms')
-    ],
+    }
 }
 

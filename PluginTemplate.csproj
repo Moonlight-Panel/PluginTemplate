@@ -2,9 +2,9 @@
 
     <PropertyGroup>
         <PackageId>Moonlight.PluginTemplate</PackageId>
-        <PackageVersion>1.0.3</PackageVersion>
+        <PackageVersion>1.0.4</PackageVersion>
         <Title>Moonlight.PluginTemplate</Title>
-        <Authors>Chiara Baumgartner</Authors>
+        <Authors>ChiaraBm</Authors>
         <Description>A template for creating moonlight plugins faster</Description>
         <PackageTags>moonlight</PackageTags>
         <PackageProjectUrl>https://github.com/Moonlight-Panel/PluginTemplate</PackageProjectUrl>

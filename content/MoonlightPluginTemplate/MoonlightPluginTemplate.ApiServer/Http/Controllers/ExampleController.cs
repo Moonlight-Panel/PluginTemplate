@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MoonlightPluginTemplate.ApiServer.Services;
 using MoonlightPluginTemplate.Shared.Http.Responses;
 
 namespace MoonlightPluginTemplate.ApiServer.Http.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/example")]
 public class ExampleController : Controller

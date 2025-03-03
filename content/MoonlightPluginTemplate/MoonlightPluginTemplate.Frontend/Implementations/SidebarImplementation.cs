@@ -5,9 +5,9 @@ namespace MoonlightPluginTemplate.Frontend.Implementations;
 
 public class SidebarImplementation : ISidebarItemProvider
 {
-    public SidebarItem[] Get()
+    public void ModifySidebar(List<SidebarItem> items)
     {
-        return
+        items.AddRange(
         [
             new SidebarItem()
             {
@@ -17,6 +17,6 @@ public class SidebarImplementation : ISidebarItemProvider
                 Group = "MoonlightPluginTemplate",
                 Priority = 1
             }
-        ];
+        ]);
     }
 }

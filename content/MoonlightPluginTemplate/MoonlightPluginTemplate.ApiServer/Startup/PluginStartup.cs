@@ -1,35 +1,34 @@
 using MoonCore.Extensions;
 using Moonlight.ApiServer.Interfaces.Startup;
 using Moonlight.ApiServer.Services;
+using MoonlightPluginTemplate.ApiServer.Database;
 
 namespace MoonlightPluginTemplate.ApiServer.Startup;
 
-public class PluginStartup : IAppStartup
+public class PluginStartup : IPluginStartup
 {
     private readonly ILogger<PluginStartup> Logger;
-    private readonly BundleService BundleService;
 
-    public PluginStartup(ILogger<PluginStartup> logger, BundleService bundleService)
+    public PluginStartup(ILogger<PluginStartup> logger)
     {
         Logger = logger;
-        BundleService = bundleService;
     }
 
-    public Task BuildApp(IHostApplicationBuilder builder)
+    public Task BuildApplication(IHostApplicationBuilder builder)
     {
         Logger.LogInformation("Elo World from MoonlightPluginTemplate");
-        
+
         // Scan the current plugin assembly for di services
         builder.Services.AutoAddServices<PluginStartup>();
-        
-        // Add css to bundle
-        BundleService.BundleCss("css/MoonlightPluginTemplate.min.css");
-        
+
+        builder.Services.AddDbContext<MoonlightPluginTemplateDataContext>();
+
         return Task.CompletedTask;
     }
 
-    public Task ConfigureApp(IApplicationBuilder app)
-    {
-        return Task.CompletedTask;
-    }
+    public Task ConfigureApplication(IApplicationBuilder app)
+        => Task.CompletedTask;
+
+    public Task ConfigureEndpoints(IEndpointRouteBuilder routeBuilder)
+        => Task.CompletedTask;
 }

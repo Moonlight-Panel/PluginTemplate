@@ -19,7 +19,6 @@
 
     <ItemGroup>
       <Folder Include="Helpers\" />
-      <Folder Include="Interfaces\" />
       <Folder Include="UI\Components\" />
       <Folder Include="wwwroot\" />
     </ItemGroup>

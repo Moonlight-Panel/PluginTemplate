@@ -400,4 +400,4 @@ FodyWeavers.xsd
 
 # MoonlightPluginTemplate
 **/storage
-**/wwwroot/css/MoonlightPluginTemplate.min.css
+**/style.min.css

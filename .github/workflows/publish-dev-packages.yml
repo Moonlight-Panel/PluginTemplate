@@ -1,0 +1,24 @@
+name: Build and Publish NuGet Package
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-scrips:
+    runs-on: debian-12
+
+    steps:
+      - name: Clean up Environment
+        run: |
+             rm -rf ./*
+             rm -rf ./.??*
+
+      - uses: actions/checkout@v3
+
+      - name: Pack the plugin template
+        run: dotnet pack -c Debug -o ./packs
+
+      - name: Publish to github Pkg
+        run: dotnet nuget push "./packs/*.nupkg" --skip-duplicate --api-key ${{secrets.GH_PACKAGES_READWRITE}} --source https://nuget.pkg.github.com/Moonlight-Panel/index.json

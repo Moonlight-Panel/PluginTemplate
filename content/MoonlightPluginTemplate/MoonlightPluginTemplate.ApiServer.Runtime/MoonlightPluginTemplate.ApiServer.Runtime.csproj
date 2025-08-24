@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <NoDefaultLaunchSettingsFile>True</NoDefaultLaunchSettingsFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\MoonlightPluginTemplate.ApiServer\MoonlightPluginTemplate.ApiServer.csproj"/>
+        <ProjectReference Include="..\MoonlightPluginTemplate.Frontend.Runtime\MoonlightPluginTemplate.Frontend.Runtime.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.7" />
+        <PackageReference Include="MoonCore.PluginFramework" Version="1.0.8"/>
+        <PackageReference Include="MoonCore.PluginFramework.Generator" Version="1.0.2"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="Properties\launchSettings.json">
+        <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot\" />
+    </ItemGroup>
+
+</Project>

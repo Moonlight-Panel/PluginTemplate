@@ -1,55 +1,42 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
 
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <DefaultItemExcludes>
+            **\bin\**;**\obj\**;**\node_modules\**;**\Styles\*.json
+        </DefaultItemExcludes>
+        <StaticWebAssetsEnabled>True</StaticWebAssetsEnabled>
     </PropertyGroup>
 
     <PropertyGroup Label="Nuget Settings">
         <PackageId>MoonlightPluginTemplate.Frontend</PackageId>
         <Title>MoonlightPluginTemplate.Frontend</Title>
         <Version>2.1.0</Version>
-        <PackageTags>frontend</PackageTags>
         <IsPackable>true</IsPackable>
     </PropertyGroup>
 
     <ItemGroup Label="Build instruction for nuget package building">
-        <None Include="**\*.cs" Exclude="storage\**\*;bin\**\*;obj\**\*">
-            <Pack>true</Pack>
-            <PackagePath>src</PackagePath>
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </None>
-        <None Include="**\*.razor" Exclude="storage\**\*;bin\**\*;obj\**\*">
-            <Pack>true</Pack>
-            <PackagePath>src</PackagePath>
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </None>
-        <None Include="Styles\**\*" Exclude="storage\**\*;bin\**\*;obj\**\*;Styles\node_modules\**\*">
-            <Pack>true</Pack>
-            <PackagePath>styles</PackagePath>
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-        </None>
         <Compile Remove="storage\**\*" />
         <Content Remove="storage\**\*" />
         <None Remove="storage\**\*" />
+    </ItemGroup>
 
+    <ItemGroup>
+        <None Include="Styles/mappings/*.map" Pack="true" PackagePath="Styles/" />
+        <None Include="MoonlightPluginTemplate.Frontend.targets" Pack="true" PackagePath="build/MoonlightPluginTemplate.Frontend.targets" />
     </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.5"/>
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.5" PrivateAssets="all"/>
-        <PackageReference Include="Moonlight.Client" Version="2.1.0" />
+        <PackageReference Include="Moonlight.Client" Version="2.1.*" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Helpers\" />
       <Folder Include="UI\Components\" />
       <Folder Include="wwwroot\" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="Properties\launchSettings.json" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,10 +1,14 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using MoonCore.Extensions;
 using Moonlight.ApiServer.Plugins;
 using MoonlightPluginTemplate.ApiServer.Database;
 
 namespace MoonlightPluginTemplate.ApiServer.Startup;
 
-[PluginStartup]
 public class PluginStartup : IPluginStartup
 {
     public Task BuildApplication(IServiceProvider serviceProvider, IHostApplicationBuilder builder)

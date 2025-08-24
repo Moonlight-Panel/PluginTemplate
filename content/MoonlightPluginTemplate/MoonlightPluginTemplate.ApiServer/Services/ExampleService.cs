@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Logging;
 using MoonCore.Attributes;
 
 namespace MoonlightPluginTemplate.ApiServer.Services;

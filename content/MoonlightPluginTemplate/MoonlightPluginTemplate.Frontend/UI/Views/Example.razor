@@ -1,12 +1,12 @@
 @page "/example"
 
+@using MoonCore.Blazor.FlyonUi.Components
 @using MoonCore.Helpers
-@using MoonCore.Blazor.Tailwind.Components
 @using MoonlightPluginTemplate.Shared.Http.Responses
 
 @inject HttpApiClient ApiClient
 
-<h3 class="text-primary-500 mb-8">Welcome to this example page</h3>
+<h3 class="text-primary mb-8">Welcome to this example page</h3>
 
 <LazyLoader Load="Load">
     <h1 class="text-center text-zinc-500">

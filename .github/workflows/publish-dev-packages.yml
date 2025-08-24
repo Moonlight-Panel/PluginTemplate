@@ -6,19 +6,28 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-nupkg:
+  publish:
     runs-on: debian-12
 
     steps:
+      # Step 1: Clean environment
       - name: Clean up Environment
         run: |
-             rm -rf ./*
-             rm -rf ./.??*
+          rm -rf ./*
+          rm -rf ./.??*
 
-      - uses: actions/checkout@v3
+      # Step 2: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Pack the plugin template
-        run: dotnet pack -c Debug -o ./packs
+      # Step 3: Build project
+      - name: "Build project"
+        run: dotnet build --configuration Debug PluginTemplate.csproj
 
-      - name: Publish to github Pkg
-        run: dotnet nuget push "./packs/*.nupkg" --skip-duplicate --api-key ${{secrets.GH_PACKAGES_READWRITE}} --source https://nuget.pkg.github.com/Moonlight-Panel/index.json
+      # Step 4: Pack project
+      - name: "Pack project"
+        run: dotnet pack --configuration Debug --no-build --output . PluginTemplate.csproj
+
+      # Step 5: Publish on package registry
+      - name: Publish on package registry"
+        run: dotnet nuget push "*.nupkg" --skip-duplicate --api-key ${{secrets.GH_PACKAGES_READWRITE}} --source https://nuget.pkg.github.com/Moonlight-Panel/index.json

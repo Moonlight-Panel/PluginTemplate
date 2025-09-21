@@ -11,7 +11,7 @@ namespace MoonlightPluginTemplate.ApiServer.Startup;
 
 public class PluginStartup : IPluginStartup
 {
-    public Task BuildApplication(IServiceProvider serviceProvider, IHostApplicationBuilder builder)
+    public Task BuildApplicationAsync(IServiceProvider serviceProvider, IHostApplicationBuilder builder)
     {
         var logger = serviceProvider.GetRequiredService<ILogger<PluginStartup>>();
         
@@ -25,9 +25,9 @@ public class PluginStartup : IPluginStartup
         return Task.CompletedTask;
     }
 
-    public Task ConfigureApplication(IServiceProvider serviceProvider, IApplicationBuilder app)
+    public Task ConfigureApplicationAsync(IServiceProvider serviceProvider, IApplicationBuilder app)
         => Task.CompletedTask;
 
-    public Task ConfigureEndpoints(IServiceProvider serviceProvider, IEndpointRouteBuilder routeBuilder)
+    public Task ConfigureEndpointsAsync(IServiceProvider serviceProvider, IEndpointRouteBuilder routeBuilder)
         => Task.CompletedTask;
 }

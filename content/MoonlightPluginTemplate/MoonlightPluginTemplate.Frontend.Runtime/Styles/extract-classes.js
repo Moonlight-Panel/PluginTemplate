@@ -17,12 +17,12 @@ module.exports = (opts = {}) => {
         OnceExit() {
             const classArray = Array.from(classSet).sort();
 
-            if (!fs.existsSync("../../MoonlightServers.Frontend/Styles/mappings")){
-                fs.mkdirSync("../../MoonlightServers.Frontend/Styles/mappings");
+            if (!fs.existsSync("../../MoonlightPluginTemplate.Frontend/Styles/mappings")){
+                fs.mkdirSync("../../MoonlightPluginTemplate.Frontend/Styles/mappings");
             }
             
-            fs.writeFileSync('../../MoonlightServers.Frontend/mappings/classes.map', classArray.join('\n'));
-            console.log(`✅ Extracted ${classArray.length} Tailwind classes to tailwind-classes.txt`);
+            fs.writeFileSync('../../MoonlightPluginTemplate.Frontend/mappings/classes.map', classArray.join('\n'));
+            console.log(`Extracted ${classArray.length} Tailwind classes`);
         }
     };
 };

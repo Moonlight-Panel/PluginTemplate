@@ -18,9 +18,9 @@ public class ExampleController : Controller
     }
 
     [HttpGet]
-    public async Task<ExampleResponse> Get()
+    public async Task<ActionResult<ExampleResponse>> GetAsync()
     {
-        var val = await ExampleService.GetValue();
+        var val = await ExampleService.GetValueAsync();
 
         return new ExampleResponse()
         {

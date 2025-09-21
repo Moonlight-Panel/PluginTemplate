@@ -15,7 +15,7 @@ public class ExampleService
         Random = new();
     }
 
-    public async Task<int> GetValue()
+    public async Task<int> GetValueAsync()
     {
         Logger.LogInformation("Generating value");
         return Random.Next(0, 10324);

@@ -9,7 +9,7 @@ namespace MoonlightPluginTemplate.Frontend.Startup;
 
 public class PluginStartup : IPluginStartup
 {
-    public Task BuildApplication(IServiceProvider serviceProvider, WebAssemblyHostBuilder builder)
+    public Task BuildApplicationAsync(IServiceProvider serviceProvider, WebAssemblyHostBuilder builder)
     {
         builder.Services.AutoAddServices<PluginStartup>();
 
@@ -18,7 +18,7 @@ public class PluginStartup : IPluginStartup
         return Task.CompletedTask;
     }
 
-    public Task ConfigureApplication(IServiceProvider serviceProvider, WebAssemblyHost app)
+    public Task ConfigureApplicationAsync(IServiceProvider serviceProvider, WebAssemblyHost app)
     {
         return Task.CompletedTask;
     }

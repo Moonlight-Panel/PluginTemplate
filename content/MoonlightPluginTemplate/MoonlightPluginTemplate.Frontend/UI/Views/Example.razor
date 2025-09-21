@@ -8,7 +8,7 @@
 
 <h3 class="text-primary mb-8">Welcome to this example page</h3>
 
-<LazyLoader Load="Load">
+<LazyLoader Load="LoadAsync">
     <h1 class="text-center text-zinc-500">
         @Response.Number
     </h1>
@@ -18,7 +18,7 @@
 {
     private ExampleResponse Response;
     
-    private async Task Load(LazyLoader _)
+    private async Task LoadAsync(LazyLoader _)
     {
         Response = await ApiClient.GetJson<ExampleResponse>("api/example");
     }
